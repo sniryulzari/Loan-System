@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import NewLoan from './Pages/NewLoan';
+import CloseLoan from './Pages/CloseLoan';
+import FindLoan from './Pages/FindLoan';
+import FindBorrower from './Pages/FindBorrower';
+import Home from './Pages/Home';
 
-function App() {
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/newLoan" element={<NewLoan />} />
+          <Route path="/findLoan" element={<FindLoan />} />
+          <Route path="/findBorrower" element={<FindBorrower />} />
+          <Route path="/closeLoan" element={<CloseLoan />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
